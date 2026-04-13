@@ -1,0 +1,208 @@
+/* 
+  Portfolio Style System
+  Theme: Minimal, Stylish, Dark
+*/
+
+:root {
+  --bg-color: #050505;
+  --text-main: #f0f0f0;
+  --text-muted: #888888;
+  --border-color: #222222;
+  
+  --font-family: 'Inter', 'Noto Sans JP', sans-serif;
+  --container-width: 900px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  line-height: 1.8;
+  letter-spacing: 0.05em;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ==================
+   Layout
+================== */
+.wrapper {
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 6rem 5%;
+}
+
+.section {
+  margin-bottom: 8rem;
+}
+
+.section-title {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 1rem;
+}
+
+/* ==================
+   Profile Section
+================== */
+.profile-section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  padding-top: 4rem;
+}
+
+.logo {
+  font-size: 3.5rem;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: -2px;
+}
+
+.catchphrase {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 2rem;
+  letter-spacing: -0.5px;
+}
+
+.bio {
+  font-size: 1rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .profile-section {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .profile-content {
+    max-width: 600px;
+  }
+}
+
+/* ==================
+   Tech Stack Section
+================== */
+.tech-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.tech-item h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.tech-item p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+@media (min-width: 768px) {
+  .tech-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==================
+   Works Section
+================== */
+.works-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.work-header {
+  margin-bottom: 1rem;
+}
+
+.work-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.work-role {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: var(--bg-color);
+  background-color: var(--text-main);
+  padding: 0.2rem 0.6rem;
+  border-radius: 2px;
+  font-weight: 700;
+}
+
+.work-desc {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.work-details {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  border-left: 2px solid var(--border-color);
+  padding-left: 1.5rem;
+}
+
+.detail-block h5 {
+  font-size: 0.9rem;
+  color: var(--text-main);
+  margin-bottom: 0.5rem;
+}
+
+.detail-block p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+@media (min-width: 768px) {
+  .work-details {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ==================
+   Footer
+================== */
+.footer {
+  text-align: left;
+  padding: 2rem 0;
+  border-top: 1px solid var(--border-color);
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ==================
+   Animations
+================== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s cubic-bezier(0.2, 1, 0.3, 1), transform 1s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
