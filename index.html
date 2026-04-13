@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio - Web Engineer</title>
+  <meta name="description" content="複雑な仕様を紐解き、事業成長とデータ整合性を両立する持続可能なアーキテクチャへ再構築するWebエンジニア。">
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="wrapper">
+    
+    <!-- Profile Section -->
+    <header class="section profile-section fade-in">
+      <h1 class="logo">Port<br>folio.</h1>
+      
+      <div class="profile-content">
+        <h2 class="catchphrase">複雑な仕様を紐解き、<br>持続可能なアーキテクチャへ。</h2>
+        <p class="bio">
+          実務3年以上。PHP・データベース設計・フロントエンドに精通。<br>
+          肥大化したビジネスロジックやデータ不整合といった水面下の負債を解消し、<br>
+          事業の成長に追随できるモダンで長寿命なWebシステムへと再構築します。
+        </p>
+      </div>
+    </header>
+
+    <!-- Tech Stack Section (Added for Portfolio completeness) -->
+    <section class="section tech-section fade-in">
+      <h3 class="section-title">01 / Tech Stack</h3>
+      <div class="tech-grid">
+        <div class="tech-item">
+          <h4>Backend</h4>
+          <p>PHP (OOPベース設計, リファクタリング), FuelPHP, CakePHP, WordPress Plugin API</p>
+        </div>
+        <div class="tech-item">
+          <h4>Database</h4>
+          <p>MySQL (RDB正規化, トランザクション処理, 非正規化チューニング)</p>
+        </div>
+        <div class="tech-item">
+          <h4>Frontend</h4>
+          <p>JavaScript (ES6+), HTML5/CSS3, MapLibre GL JS, 非同期フロントエンド設計</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Works Section -->
+    <section class="section works-section fade-in">
+      <h3 class="section-title">02 / Selected Works</h3>
+
+      <div class="works-list">
+        <!-- Work 1 -->
+        <article class="work-item">
+          <div class="work-header">
+            <h4 class="work-title">犬同伴宿泊施設ポータル「いぬやど」</h4>
+            <span class="work-role">企画 / 開発 / 運用</span>
+          </div>
+          <p class="work-desc">犬同伴専門の宿泊予約サイトおよび連動マップシステム (Google Maps / Places API活用)。</p>
+          
+          <div class="work-details">
+            <div class="detail-block">
+              <h5>課題とアプローチ</h5>
+              <p>外部API機能と膨大な画像データを取り扱う中で、「フロント描画のパフォーマンス維持」と「データ整合性」がトレードオフになる課題がありました。また、保守面では機能追加に伴うビジネスロジック肥大化の課題がありました。</p>
+            </div>
+            <div class="detail-block">
+              <h5>設計・解決策</h5>
+              <p>空間座標と施設情報を厳密に分離し、キャッシュAPIを用いて画像をサイドロード化。また、関心の分離（Separation of Concerns）を徹底した堅牢なオブジェクト指向を用い、API処理やデータ処理をクラス化しました。</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Work 2 -->
+        <article class="work-item">
+          <div class="work-header">
+            <h4 class="work-title">オリジナルグッズ制作プラットフォーム</h4>
+            <span class="work-role">運用 / 開発基盤改善</span>
+          </div>
+          <p class="work-desc">ユーザー独自のカスタマイズデザインから商品生産・発注までを自動化するEC基盤。</p>
+          
+          <div class="work-details">
+            <div class="detail-block">
+              <h5>課題とアプローチ</h5>
+              <p>複雑な入稿オプションと工場連携（CSV・生産フロー）が密結合し、わずかな仕様変更が「重大なデータ不整合」を招きかねない保守性の低いレガシー状態でした。</p>
+            </div>
+            <div class="detail-block">
+              <h5>設計・解決策</h5>
+              <p>ステートマシン（状態遷移）の厳密な定義に基づき、点在していた判定処理を集約。複雑なトランザクションを保護しつつ、段階的に安全な共通クラスへと切り出し、変更要求に素早く応じられる基盤へと脱却させました。</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer fade-in">
+      <p>&copy; 2026 Designed for the Future.</p>
+    </footer>
+
+  </div>
+  
+  <script src="js/main.js"></script>
+</body>
+</html>
